@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.customer.CustomerService;
 import org.example.flight.FlightService;
 
 import java.io.InputStream;
@@ -26,6 +27,7 @@ public class Main {
             try (Connection connection = DriverManager.getConnection(url, user, password)) {
                 if (connection != null) {
                     System.out.println("Connected");
+
                     // Exercise 2.3
                     FlightService flightService = new FlightService();
                     flightService.insertFlight(connection);
@@ -33,6 +35,15 @@ public class Main {
                     flightService.updateFlight(connection, 2, 324.32);
                     flightService.deleteFlight(connection, 3);
                     flightService.selectFlightByID(connection, 2);
+
+                    // Exercise 3.3
+                    CustomerService customerService = new CustomerService();
+                    customerService.insertCustomer(connection);
+                    customerService.queryAllCustomers(connection);
+                    customerService.selectCustomerByName(connection, "Jane");
+                    customerService.updateCustomer(connection, 1, "John Smith");
+                    customerService.deleteCustomer(connection, 3);
+                    customerService.queryAllCustomers(connection);
                 }
             }
         } catch (Exception e) {
