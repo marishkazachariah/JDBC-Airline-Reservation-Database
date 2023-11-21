@@ -63,7 +63,7 @@ public class FlightService {
                 double seatsAvailable = rs.getInt("SeatsAvailable");
 
 
-                System.out.println("Flight ID: " + flightID + ", Airling: " +
+                System.out.println("Flight ID: " + flightID + ", Airline: " +
                         airline + ", Origin: " + origin + " Destination: " +
                         destination +  " Departure Time: " + departureTime +
                         " Arrival Time: " + arrivalTime + " Price: " + price +
@@ -91,7 +91,7 @@ public class FlightService {
                 double seatsAvailable = rs.getInt("SeatsAvailable");
 
 
-                System.out.println("Flight ID: " + flightID + ", Airling: " +
+                System.out.println("Flight ID: " + flightID + ", Airline: " +
                         airline + ", Origin: " + origin + " Destination: " +
                         destination +  " Departure Time: " + departureTime +
                         " Arrival Time: " + arrivalTime + " Price: " + price +
