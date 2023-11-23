@@ -34,9 +34,11 @@ class FlightServiceTest {
 
                 String date = "2023-11-20";
 
+                // https://stackoverflow.com/questions/8708342/redirect-console-output-to-string-in-java
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                // Anything written to System.out will be redirected to outputStream
                 System.setOut(new PrintStream(outputStream));
-
+                // Resets the standard output to its original value
                 flightService.queryFlightsByDate(connection, date);
 
                 System.setOut(System.out);

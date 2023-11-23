@@ -31,11 +31,14 @@ class CustomerServiceTest {
             try (Connection connection = DriverManager.getConnection(url, user, password)) {
                 CustomerService customerService = new CustomerService();
 
+                // https://stackoverflow.com/questions/8708342/redirect-console-output-to-string-in-java
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                System.setOut(new PrintStream(outputStream));
 
+                // Anything written to System.out will be redirected to outputStream
+                System.setOut(new PrintStream(outputStream));
                 customerService.queryCustomersWithBookings(connection);
 
+                // Resets the standard output to its original value
                 System.setOut(System.out);
 
                 String output = outputStream.toString().trim();

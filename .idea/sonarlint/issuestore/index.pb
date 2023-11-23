@@ -16,3 +16,5 @@ T
 $src/main/java/org/example/Main2.java,8/2/82da1d8cfd4242b8eceb3f51bf94ef24398d7267
 k
 ;src/test/java/org/example/customer/CustomerServiceTest.java,0/8/081073f8f45f8428e37ac9db2bbe3b229239798a
+c
+3src/main/java/org/example/TransactionsExercise.java,a/c/ac55b42d6e9cd1803aabd499a2280b546d1aebce
