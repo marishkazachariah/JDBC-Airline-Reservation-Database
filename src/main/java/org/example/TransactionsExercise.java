@@ -1,8 +1,5 @@
 package org.example;
 
-import org.example.customer.CustomerService;
-import org.example.flight.FlightService;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -35,6 +32,7 @@ public class TransactionsExercise {
                     System.out.println("Connected");
                     connection.setAutoCommit(false);
 
+                    // only had time to do insertions
                     insertCourse(connection, "Math", "Arithmetics");
                     insertTheme(connection, "Bachelors", 1);
 
