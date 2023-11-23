@@ -95,5 +95,65 @@ public class CustomerService {
             System.out.println(rowsAffected + " row(s) deleted.");
         }
     }
+
+    // Week 12 Day 4 - Exercise 1.2
+    public void queryCustomersWithBookings(Connection connection) throws SQLException {
+        String joinQuery = "SELECT Customer.Name AS CustomerName, Booking.BookingID, Booking.BookingDate " +
+                "FROM Customer " +
+                "JOIN Booking ON Customer.CustomerID = Booking.CustomerID";
+
+        try (PreparedStatement pst = connection.prepareStatement(joinQuery);
+             ResultSet rs = pst.executeQuery()) {
+            System.out.println("Customers with Bookings:");
+
+            while (rs.next()) {
+                String customerName = rs.getString("CustomerName");
+                int bookingID = rs.getInt("BookingID");
+                Date bookingDate = rs.getDate("BookingDate");
+
+                System.out.println("Customer Name: " + customerName + ", Booking ID: " +
+                        bookingID + ", Booking Date: " + bookingDate);
+            }
+        }
+    }
+
+    // Exercise 3.2
+    public void queryBookingsByCustomerID(Connection connection, int customerID) throws SQLException {
+        String joinQuery = "SELECT Booking.*, Flight.Airline, Flight.DepartureTime, Flight.ArrivalTime " +
+                "FROM Booking " + "JOIN Flight ON Booking.FlightID = Flight.FlightID " +
+                "WHERE Booking.CustomerID = ?";
+
+        try (PreparedStatement pst = connection.prepareStatement(joinQuery)) {
+            pst.setInt(1, customerID);
+
+            try (ResultSet rs = pst.executeQuery()) {
+                if (!rs.isBeforeFirst()) {
+                    System.out.println("Sorry, no bookings with Customer ID: " + customerID);
+                } else {
+                    System.out.println("Bookings from " + customerID + " :");
+
+                    while (rs.next()) {
+                        int bookingID = rs.getInt("BookingID");
+                        String flightID = rs.getString("FlightID");
+                        String bookingDate = rs.getString("BookingDate");
+                        String numberOfPassengers = rs.getString("NumberOfPassengers");
+                        String status = rs.getString("Status");
+                        String airline = rs.getString("Airline");
+                        String departureTime = rs.getString("DepartureTime");
+                        String arrivalTime = rs.getString("ArrivalTime");
+
+                        System.out.println("Booking ID: " + bookingID + ", Flight ID: " +
+                                flightID + ", Booking Date: " + bookingDate +
+                                ", Number of Passengers: " + numberOfPassengers +
+                                ", Status: " + status +
+                                ", Airline: " + airline +
+                                ", Departure Time: " + departureTime +
+                                ", Arrival Time: " + arrivalTime);
+                    }
+                }
+            }
+        }
+    }
+
 }
 

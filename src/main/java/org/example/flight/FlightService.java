@@ -122,5 +122,71 @@ public class FlightService {
             System.out.println(rowsAffected + " row(s) deleted.");
         }
     }
+
+    // Week 12 Day 4 - Exercise 2.2
+    public void queryFlightByOrigin(Connection connection, String airport) throws SQLException {
+        String joinQuery = "SELECT * FROM Flight WHERE Origin = ?";
+
+        try (PreparedStatement pst = connection.prepareStatement(joinQuery)) {
+            pst.setString(1, airport);
+
+            try (ResultSet rs = pst.executeQuery()) {
+                if (!rs.isBeforeFirst()) {
+                    System.out.println("Sorry, no flights from " + airport);
+                } else {
+                    System.out.println("Flights from " + airport + " :");
+
+                    while (rs.next()) {
+                        int flightID = rs.getInt("FlightID");
+                        String airline = rs.getString("Airline");
+                        String origin = rs.getString("Origin");
+                        String destination = rs.getString("Destination");
+                        String departureTime = rs.getString("DepartureTime");
+                        String arrivalTime = rs.getString("ArrivalTime");
+                        double price = rs.getDouble("Price");
+                        int seatsAvailable = rs.getInt("SeatsAvailable");
+
+                        System.out.println("Flight ID: " + flightID + ", Airline: " +
+                                airline + ", Origin: " + origin + ", Destination: " + destination +
+                                ", Departure Time: " + departureTime + ", Arrival Time: " + arrivalTime +
+                                ", Price: " + price + ", Seats Available: " + seatsAvailable);
+                    }
+                }
+            }
+        }
+    }
+
+    public void queryFlightsByDate(Connection connection, String date) throws SQLException {
+        String partialDateQuery = "SELECT * FROM Flight WHERE DATE(DepartureTime) LIKE ?";
+
+        try (PreparedStatement pst = connection.prepareStatement(partialDateQuery)) {
+            pst.setString(1, date + "%"); // Appending '%' to perform a partial match
+
+            try (ResultSet rs = pst.executeQuery()) {
+                if (!rs.isBeforeFirst()) {
+                    System.out.println("Sorry, no flights on " + date);
+                } else {
+                    System.out.println("Flights on " + date + " :");
+
+                    while (rs.next()) {
+                        int flightID = rs.getInt("FlightID");
+                        String airline = rs.getString("Airline");
+                        String origin = rs.getString("Origin");
+                        String destination = rs.getString("Destination");
+                        String departureTime = rs.getString("DepartureTime");
+                        String arrivalTime = rs.getString("ArrivalTime");
+                        double price = rs.getDouble("Price");
+                        int seatsAvailable = rs.getInt("SeatsAvailable");
+
+                        System.out.println("Flight ID: " + flightID + ", Airline: " +
+                                airline + ", Origin: " + origin + ", Destination: " + destination +
+                                ", Departure Time: " + departureTime + ", Arrival Time: " + arrivalTime +
+                                ", Price: " + price + ", Seats Available: " + seatsAvailable);
+                    }
+                }
+            }
+        }
+    }
+
 }
 

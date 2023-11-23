@@ -10,6 +10,7 @@ import java.util.Properties;
 
 public class Main {
     public static void main(String[] args) {
+        // Week 12 Day 3
         // Exercise 1.1 & 1.2
         Properties prop = new Properties();
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
@@ -44,6 +45,17 @@ public class Main {
                     customerService.updateCustomer(connection, 1, "John Smith");
                     customerService.deleteCustomer(connection, 3);
                     customerService.queryAllCustomers(connection);
+
+                    // Week 12 Day 4
+                    // Exercise 1.3
+                    customerService.queryCustomersWithBookings(connection);
+
+                    // Exercise 2.3
+                    flightService.queryFlightByOrigin(connection, "CityA");
+                    flightService.queryFlightsByDate(connection, "2023-11-20");
+
+                    // Exercise 3.3
+                    customerService.queryBookingsByCustomerID(connection, 1);
                 }
             }
         } catch (Exception e) {

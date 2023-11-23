@@ -1,15 +1,43 @@
 
-L	java:S106"+Replace this use of System.out by a logger.(Û­œëûÿÿÿÿ8íŠ“¿1
-G	java:S106"+Replace this use of System.out by a logger.(¼ãŞî8ŸíŠ“¿1
-G	java:S106"+Replace this use of System.out by a logger.(à™Ò…8ŸíŠ“¿1
-F	java:S106"+Replace this use of System.out by a logger.(¶¥šn8ŸíŠ“¿1
-G	java:S106"+Replace this use of System.out by a logger.(¢Û¬‡8ŸíŠ“¿1
-L	java:S106"+Replace this use of System.out by a logger.(È€ÔŠúÿÿÿÿ8ŸíŠ“¿1
-G	java:S106"+Replace this use of System.out by a logger.(„Ë­Ç8ŸíŠ“¿1
-L	java:S106*"+Replace this use of System.out by a logger.(ÍÃÔãıÿÿÿÿ8 íŠ“¿1
-G	java:S1065"+Replace this use of System.out by a logger.(ÏŠÃ³8¡íŠ“¿1
-L	java:S106B"+Replace this use of System.out by a logger.(‘Ì´ºşÿÿÿÿ8¢íŠ“¿1
-L	java:S106Q"+Replace this use of System.out by a logger.(‚¸”ÿıÿÿÿÿ8¢íŠ“¿1
-L	java:S106^"+Replace this use of System.out by a logger.(‘Ì´ºşÿÿÿÿ8£íŠ“¿1
-L	java:S106o"+Replace this use of System.out by a logger.(¬Â¨¢øÿÿÿÿ8£íŠ“¿1
-G	java:S106z"+Replace this use of System.out by a logger.(ò³à³8¤íŠ“¿1
+i
+java:S1192:"GDefine a constant instead of duplicating this literal "Origin" 4 times.(×Ïéåøÿÿÿÿ8ğçã¿1
+k
+java:S1192<"NDefine a constant instead of duplicating this literal "DepartureTime" 4 times.(Òœïä8ğçã¿1
+i
+java:S1192;"LDefine a constant instead of duplicating this literal "Destination" 4 times.(’ŞÃ×8ñçã¿1
+e
+java:S11929"HDefine a constant instead of duplicating this literal "Airline" 4 times.(„¸‚8ñçã¿1
+l
+java:S1192?"ODefine a constant instead of duplicating this literal "SeatsAvailable" 4 times.(²ƒ®ö8ñçã¿1
+n
+java:S1192B"LDefine a constant instead of duplicating this literal ", Airline: " 4 times.(‘Ì´ºşÿÿÿÿ8ñçã¿1
+f
+java:S11928"IDefine a constant instead of duplicating this literal "FlightID" 4 times.(Ù¾•8ñçã¿1
+m
+java:S1192C"KDefine a constant instead of duplicating this literal ", Origin: " 4 times.(·æ²¨úÿÿÿÿ8ñçã¿1
+n
+java:S1192B"LDefine a constant instead of duplicating this literal "Flight ID: " 4 times.(‘Ì´ºşÿÿÿÿ8ñçã¿1
+n
+java:S1192="LDefine a constant instead of duplicating this literal "ArrivalTime" 4 times.(û÷’Æÿÿÿÿÿ8ñçã¿1
+h
+java:S1192>"FDefine a constant instead of duplicating this literal "Price" 4 times.(Ç›ªöüÿÿÿÿ8ñçã¿1
+L	java:S106"+Replace this use of System.out by a logger.(Û­œëûÿÿÿÿ8şçã¿1
+G	java:S106"+Replace this use of System.out by a logger.(¼ãŞî8şçã¿1
+G	java:S106"+Replace this use of System.out by a logger.(à™Ò…8şçã¿1
+F	java:S106"+Replace this use of System.out by a logger.(¶¥šn8şçã¿1
+G	java:S106"+Replace this use of System.out by a logger.(¢Û¬‡8şçã¿1
+L	java:S106"+Replace this use of System.out by a logger.(È€ÔŠúÿÿÿÿ8şçã¿1
+G	java:S106"+Replace this use of System.out by a logger.(„Ë­Ç8ÿçã¿1
+L	java:S106*"+Replace this use of System.out by a logger.(ÍÃÔãıÿÿÿÿ8ÿçã¿1
+G	java:S1065"+Replace this use of System.out by a logger.(ÏŠÃ³8€‘çã¿1
+L	java:S106B"+Replace this use of System.out by a logger.(‘Ì´ºşÿÿÿÿ8‘çã¿1
+L	java:S106Q"+Replace this use of System.out by a logger.(‚¸”ÿıÿÿÿÿ8‘çã¿1
+L	java:S106^"+Replace this use of System.out by a logger.(‘Ì´ºşÿÿÿÿ8‘çã¿1
+L	java:S106o"+Replace this use of System.out by a logger.(¬Â¨¢øÿÿÿÿ8‚‘çã¿1
+G	java:S106z"+Replace this use of System.out by a logger.(ò³à³8‚‘çã¿1
+H	java:S106‡"+Replace this use of System.out by a logger.(ú³×»8ƒ‘çã¿1
+G	java:S106‰"+Replace this use of System.out by a logger.(ìşÒ]8ƒ‘çã¿1
+M	java:S106•"+Replace this use of System.out by a logger.(‘Ì´ºşÿÿÿÿ8ƒ‘çã¿1
+H	java:S106§"+Replace this use of System.out by a logger.(…ŒúÙ8Î¿™ä¿1
+H	java:S106©"+Replace this use of System.out by a logger.(ó¬¨»8Î¿™ä¿1
+M	java:S106µ"+Replace this use of System.out by a logger.(‘Ì´ºşÿÿÿÿ8Ï¿™ä¿1
