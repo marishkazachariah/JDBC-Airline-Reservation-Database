@@ -1,4 +1,4 @@
-package org.example.flight;
+package org.example.customer;
 
 import org.example.Main;
 import org.junit.jupiter.api.Test;
@@ -13,9 +13,9 @@ import java.sql.DriverManager;
 import java.util.Properties;
 
 // Exercise 4.1
-class FlightServiceTest {
+class CustomerServiceTest {
     @Test
-    void testQueryFlightsByDate() {
+    void testQueryCustomersWithBookings() {
         Properties prop = new Properties();
 
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
@@ -28,27 +28,20 @@ class FlightServiceTest {
             String url = prop.getProperty("db.url");
             String user = prop.getProperty("db.username");
             String password = prop.getProperty("db.password");
-
             try (Connection connection = DriverManager.getConnection(url, user, password)) {
-                FlightService flightService = new FlightService();
-
-                String date = "2023-11-20";
+                CustomerService customerService = new CustomerService();
 
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 System.setOut(new PrintStream(outputStream));
 
-                flightService.queryFlightsByDate(connection, date);
+                customerService.queryCustomersWithBookings(connection);
 
                 System.setOut(System.out);
 
                 String output = outputStream.toString().trim();
 
-                if (output.contains("Sorry, no flights on")) {
-                    assertTrue(output.contains("Sorry, no flights on " + date));
-                } else {
-                    assertTrue(output.contains("Flights on " + date));
-                    assertTrue(output.contains("Flight ID:"));
-                }
+                assertTrue(output.contains("Customers with Bookings:"));
+                assertTrue(output.contains("Customer Name:"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,7 +49,7 @@ class FlightServiceTest {
     }
 
     @Test
-    void testQueryFlightByOrigin() {
+    void testQueryBookingsByCustomerID() {
         Properties prop = new Properties();
 
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
@@ -69,26 +62,25 @@ class FlightServiceTest {
             String url = prop.getProperty("db.url");
             String user = prop.getProperty("db.username");
             String password = prop.getProperty("db.password");
-
             try (Connection connection = DriverManager.getConnection(url, user, password)) {
-                FlightService flightService = new FlightService();
+                CustomerService customerService = new CustomerService();
 
-                String origin = "CityA";
+                int testCustomerID = 1;
 
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 System.setOut(new PrintStream(outputStream));
 
-                flightService.queryFlightByOrigin(connection, origin);
+                customerService.queryBookingsByCustomerID(connection, testCustomerID);
 
                 System.setOut(System.out);
 
                 String output = outputStream.toString().trim();
 
-                if (output.contains("Sorry, no flights from")) {
-                    assertTrue(output.contains("Sorry, no flights from " + origin));
+                if (output.contains("Sorry, no bookings with Customer ID:")) {
+                    assertTrue(output.contains("Sorry, no bookings with Customer ID: " + testCustomerID));
                 } else {
-                    assertTrue(output.contains("Flights from " + origin));
-                    assertTrue(output.contains("Flight ID:"));
+                    assertTrue(output.contains("Bookings from " + testCustomerID));
+                    assertTrue(output.contains("Booking ID:"));
                 }
             }
         } catch (Exception e) {

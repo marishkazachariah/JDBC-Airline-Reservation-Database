@@ -124,17 +124,17 @@ public class FlightService {
     }
 
     // Week 12 Day 4 - Exercise 2.2
-    public void queryFlightByOrigin(Connection connection, String airport) throws SQLException {
+    public void queryFlightByOrigin(Connection connection, String airportOrigin) throws SQLException {
         String joinQuery = "SELECT * FROM Flight WHERE Origin = ?";
 
         try (PreparedStatement pst = connection.prepareStatement(joinQuery)) {
-            pst.setString(1, airport);
+            pst.setString(1, airportOrigin);
 
             try (ResultSet rs = pst.executeQuery()) {
                 if (!rs.isBeforeFirst()) {
-                    System.out.println("Sorry, no flights from " + airport);
+                    System.out.println("Sorry, no flights from " + airportOrigin);
                 } else {
-                    System.out.println("Flights from " + airport + " :");
+                    System.out.println("Flights from " + airportOrigin + " :");
 
                     while (rs.next()) {
                         int flightID = rs.getInt("FlightID");
