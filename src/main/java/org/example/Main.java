@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.booking.BookingService;
 import org.example.customer.CustomerService;
 import org.example.flight.FlightService;
 
@@ -56,6 +57,11 @@ public class Main {
 
                     // Exercise 3.3
                     customerService.queryBookingsByCustomerID(connection, 1);
+
+                    // Week 12 Day 5
+                    // Exercise 1.3
+                    BookingService bookingService = new BookingService();
+                    bookingService.bookFlight(connection, 2, 1, 1);
                 }
             }
         } catch (Exception e) {

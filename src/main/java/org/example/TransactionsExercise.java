@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class TransactionsExercise {
-    // Musie's exercise
+    // Week 12 Day 04 - Musie's exercise
     public static void main(String[] args) throws IOException {
         Connection connection = null;
         Properties prop = new Properties();

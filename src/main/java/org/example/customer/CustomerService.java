@@ -96,7 +96,7 @@ public class CustomerService {
         }
     }
 
-    // Week 12 Day 4 - Exercise 1.2
+    // Week 12 Day 4 - Exercise 1.2 & 2.1
     public void queryCustomersWithBookings(Connection connection) throws SQLException {
         String joinQuery = "SELECT Customer.Name AS CustomerName, Booking.BookingID, Booking.BookingDate " +
                 "FROM Customer " +
