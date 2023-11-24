@@ -1,0 +1,8 @@
+
+T
+java:S2589"7Remove this expression which always evaluates to "true"(¤òª£8÷¨Ýè¿1
+G	java:S106"+Replace this use of System.out by a logger.(ó†Òà8“’Óè¿1
+L	java:S106 "+Replace this use of System.out by a logger.(´áÀŠÿÿÿÿÿ8”’Óè¿1
+G	java:S106("+Replace this use of System.out by a logger.(ÿ±÷¾8”’Óè¿1
+e
+java:S3252D"HUse static access with "java.sql.Statement" for "RETURN_GENERATED_KEYS".(ïöÇ£8ÿ«Øè¿1
